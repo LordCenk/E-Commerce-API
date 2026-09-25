@@ -76,7 +76,7 @@ public class ProductService {
         product.setStockQuantity(request.getStockQuantity());
         product.setSku(request.getSku());
         product.setCategory(category);
-        return toResponse(productRepository.save(product));
+        return toResponse(productRepository.saveAndFlush(product));
     }
 
     @Transactional
